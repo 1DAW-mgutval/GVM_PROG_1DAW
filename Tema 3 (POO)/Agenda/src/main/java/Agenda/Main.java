@@ -16,7 +16,7 @@ public class Main {
         while (seguir) {
             System.out.println("Operaciones que puede realizar: \n 1. Crear Agenda \n 2. Añadir Contacto \n 3. Buscar Teléfono \n 4. Mostrar contactos ordenados \n 5. SALIR");
             opcion = sc.nextInt();
-            while (opcion > 4 || opcion < 1) {
+            while (opcion > 5 || opcion < 1) {
                 System.out.println("ERROR. Opción no válida, vuelve a intentarlo.");
                 opcion = sc.nextInt();
             }
@@ -59,7 +59,12 @@ public class Main {
                 if (existenAgendas(agendas)) {
                     System.out.println("Dime la agenda en la que quieres buscar");
                     mostrarAgendas(agendas);
-                    agendaTemp = sc.next();
+                    do {
+                        agendaTemp = sc.next();
+                        if (buscarAgenda(agendas, agendaTemp) == -1) {
+                            System.out.print("Agenda no válida, vuelve a intentarlo.");
+                        }
+                    } while (buscarAgenda(agendas, agendaTemp) == -1);
                     System.out.println("Dime el nombre del teléfono a buscar:");
                     nombreContacto = sc.next();
 
