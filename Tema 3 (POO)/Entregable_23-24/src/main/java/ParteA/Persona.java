@@ -14,24 +14,71 @@ public class Persona {
         this.dni = dni;
         this.peso = peso;
         this.altura = altura;
-        this.sexo = sexo;
+        if (sexo == null) {
+            this.sexo = Sexo.HOMBRE;
+        } else {
+            this.sexo = sexo;
+        }
     }
 
     public Persona (String nombre) {
-        this(nombre, 0, null, 0, 0, Sexo.HOMBRE);
+        this(nombre, 0, null, 0, 0, null);
     }
 
     public Persona () {
-        this("", 0, null, 0, 0, Sexo.HOMBRE);
+        this("", 0, null, 0, 0, null);
     }
 
     public int calcularIMC(){
         int resultado;
-        double imc = Math.pow(this.altura,2);
+        double imc = this.peso/Math.pow(this.altura,2);
         if (imc < 20) {
             resultado = -1;
         } else if (imc < 26) {
-
+            resultado = 0;
+        } else {
+            resultado = 1;
         }
+        return resultado;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    public Sexo getSexo() {
+        return sexo;
+    }
+
+    public String getDni() {
+        return dni;
     }
 }
