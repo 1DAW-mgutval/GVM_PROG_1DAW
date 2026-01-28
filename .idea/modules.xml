@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Tema 3 (POO)/Examen_2425/Examen_2425.iml" filepath="$PROJECT_DIR$/Tema 3 (POO)/Examen_2425/Examen_2425.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/GVM_PROG_1DAW.iml" filepath="$PROJECT_DIR$/.idea/GVM_PROG_1DAW.iml" />
     </modules>
   </component>
