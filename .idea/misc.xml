@@ -10,7 +10,14 @@
         <option value="$PROJECT_DIR$/Practica_Entregable_2425/pom.xml" />
         <option value="$PROJECT_DIR$/Tema 3 (POO)/PracticaEntregable_2425/pom.xml" />
         <option value="$PROJECT_DIR$/Tema 3 (POO)/Entregable_23-24/pom.xml" />
+        <option value="$PROJECT_DIR$/Tema 4 - Herencia Polimorfismo/pom.xml" />
+        <option value="$PROJECT_DIR$/Tema 4 (Herencia-Polimorfismo)/EjerciciosIniciales/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Tema 4 - Herencia Polimorfismo/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_20" default="true" project-jdk-name="20" project-jdk-type="JavaSDK">
