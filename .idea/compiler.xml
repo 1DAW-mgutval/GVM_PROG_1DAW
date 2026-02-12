@@ -10,11 +10,12 @@
         <module name="Entregable_23-24" />
         <module name="Agenda" />
         <module name="EjerciciosDiapositivas" />
-        <module name="BoletinEjerciciosHerencia" />
+        <module name="PRACT_1-COAC" />
         <module name="PracticaEntregable_2425" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="BoletinEjerciciosHerencia" target="20" />
       <module name="Practica_Entregable_2425" target="20" />
       <module name="Tema-4-Herencia-Polimorfismo" target="20" />
     </bytecodeTargetLevel>
