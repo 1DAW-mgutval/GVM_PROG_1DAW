@@ -7,11 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="EjerciciosVictorClase" />
-        <module name="Entregable_23-24" />
-        <module name="Agenda" />
         <module name="EjerciciosDiapositivas" />
         <module name="PRACT_1-COAC" />
+        <module name="Entregable_23-24" />
+        <module name="Agenda" />
         <module name="PracticaEntregable_2425" />
+        <module name="PRACT_2-Electrodomesticos" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

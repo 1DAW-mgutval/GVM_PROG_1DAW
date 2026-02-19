@@ -36,7 +36,7 @@ public abstract class AgrupacionOficial extends Agrupacion {
 
     public void insertar_integrante(Integrante i){
         if (!existeIntegrante(i)) {
-            Arrays.copyOf(this.lista_integrantes, (this.lista_integrantes.length+1));
+            this.lista_integrantes = Arrays.copyOf(this.lista_integrantes, (this.lista_integrantes.length+1));
             this.lista_integrantes[this.lista_integrantes.length-1] = i;
         } else {
             System.out.println("[ERROR] El integrante ya está en la lista.");
@@ -63,4 +63,16 @@ public abstract class AgrupacionOficial extends Agrupacion {
     public void caminito_del_falla() {
 
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean igual = false;
+        Agrupacion that = (Agrupacion) obj;
+        if (obj != null && this.nombre.equals(that.nombre) && this.autor.equals(that.autor)) {
+            igual = true;
+        }
+        return igual;
+    }
+
+
 }
