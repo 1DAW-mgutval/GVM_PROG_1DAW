@@ -1,6 +1,6 @@
 package Carnaval;
 
-public class Cuarteto extends AgrupacionOficial{
+public class Cuarteto extends AgrupacionOficial implements Callejera {
 
     private int miembros_no;
 
@@ -35,5 +35,10 @@ public class Cuarteto extends AgrupacionOficial{
             this.miembros_no--;
         }
         return exitoso;
+    }
+
+    @Override
+    public void amo_a_escucha() {
+        System.out.println("Amo a escucha la Cuarteto "+nombre);
     }
 }

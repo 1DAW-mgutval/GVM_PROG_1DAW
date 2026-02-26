@@ -1,6 +1,6 @@
 package Carnaval;
 
-public abstract class Agrupacion {
+public abstract class Agrupacion implements Comparable{
     static int agrupaciones_totales = 0;
 
     protected String nombre;
@@ -31,5 +31,11 @@ public abstract class Agrupacion {
 
     public static int getAgrupaciones_totales() {
         return agrupaciones_totales;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Agrupacion other = (Agrupacion) o;
+        return this.nombre.compareTo(other.nombre);
     }
 }

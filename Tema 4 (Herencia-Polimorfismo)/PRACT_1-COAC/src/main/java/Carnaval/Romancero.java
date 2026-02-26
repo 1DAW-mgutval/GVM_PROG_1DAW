@@ -1,6 +1,6 @@
 package Carnaval;
 
-public class Romancero  extends Agrupacion{
+public class Romancero  extends Agrupacion implements Callejera {
 
     private String tematica;
 
@@ -12,5 +12,10 @@ public class Romancero  extends Agrupacion{
     @Override
     String tipoAgrupacion() {
         return "Romancero";
+    }
+
+    @Override
+    public void amo_a_escucha() {
+        System.out.println("Amo a escucha la Romancero "+nombre);
     }
 }

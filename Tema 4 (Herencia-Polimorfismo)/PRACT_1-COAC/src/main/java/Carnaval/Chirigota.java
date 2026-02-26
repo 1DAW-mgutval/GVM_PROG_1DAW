@@ -1,6 +1,6 @@
 package Carnaval;
 
-public class Chirigota extends AgrupacionOficial{
+public class Chirigota extends AgrupacionOficial implements Callejera {
 
     private int cuples_no;
 
@@ -9,8 +9,17 @@ public class Chirigota extends AgrupacionOficial{
         this.cuples_no = cuples_no;
     }
 
+    public int getCuples_no() {
+        return cuples_no;
+    }
+
     @Override
     String tipoAgrupacion() {
         return "Chirigota";
+    }
+
+    @Override
+    public void amo_a_escucha() {
+        System.out.println("Amo a escucha la Chirigota "+nombre);
     }
 }

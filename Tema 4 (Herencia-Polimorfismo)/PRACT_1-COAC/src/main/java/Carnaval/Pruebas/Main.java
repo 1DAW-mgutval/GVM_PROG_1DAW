@@ -1,9 +1,9 @@
 package Carnaval.Pruebas;
 
-import Carnaval.COAC;
-import Carnaval.Coro;
-import Carnaval.Cuarteto;
-import Carnaval.Integrante;
+import Carnaval.*;
+
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,9 +19,10 @@ public class Main {
         coro.insertar_integrante(alvaro);
         coro.insertar_integrante(hugo);
         coro.eliminar_integrante(hugo);
+        coro.incrementar_puntos(100);
 
         System.out.println("\n--------------------PRUEBAS Cuarteto---------------------");
-        Cuarteto cuarteto = new Cuarteto("Los glovos", "Jorge", "Melquisedec", "Antonio", "Therians");
+        Cuarteto cuarteto = new Cuarteto("Los Glovos", "Jorge", "Melquisedec", "Antonio", "Therians");
         System.out.println(cuarteto.getMiembros_no());
         cuarteto.insertar_integrante(alvaro);
         System.out.println(cuarteto.getMiembros_no());
@@ -29,11 +30,17 @@ public class Main {
         cuarteto.insertar_integrante(alvaro);
         cuarteto.eliminar_integrante(alvaro);
         System.out.println(cuarteto.getMiembros_no());
+        cuarteto.incrementar_puntos(20);
 
         System.out.println("\n--------------------PRUEBAS COAC---------------------");
         COAC coac = new COAC();
         coac.inscribir_agrupacion(coro);
         coac.inscribir_agrupacion(cuarteto);
+
+        coac.ordenarPorNombre();
+        coac.ordenarPorAutor();
+        coac.ordenarPorPuntos();
+
         coac.eliminar_agrupacion(cuarteto);
     }
 }

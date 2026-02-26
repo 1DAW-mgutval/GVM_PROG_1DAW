@@ -1,6 +1,7 @@
 package Carnaval;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class COAC{
     protected AgrupacionOficial[] lista_agrupaciones;
@@ -43,5 +44,19 @@ public class COAC{
         }
 
         return existe;
+    }
+
+    public void ordenarPorPuntos(){
+        Comparator ordenarPuntos = new OrdenarPorPuntos();
+        Arrays.sort(this.lista_agrupaciones, ordenarPuntos);
+    }
+
+    public void ordenarPorNombre(){
+        Arrays.sort(this.lista_agrupaciones);
+    }
+
+    public void ordenarPorAutor(){
+        Comparator ordenarAutor = new OrdenarPorAutor();
+        Arrays.sort(this.lista_agrupaciones, ordenarAutor);
     }
 }

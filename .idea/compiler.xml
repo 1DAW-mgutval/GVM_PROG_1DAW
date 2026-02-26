@@ -9,10 +9,13 @@
         <module name="EjerciciosVictorClase" />
         <module name="EjerciciosDiapositivas" />
         <module name="PRACT_1-COAC" />
+        <module name="Boletines" />
+        <module name="PRACT_3-Minecraft" />
         <module name="Entregable_23-24" />
         <module name="Agenda" />
         <module name="PracticaEntregable_2425" />
         <module name="PRACT_2-Electrodomesticos" />
+        <module name="ExplicacionesVictor" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

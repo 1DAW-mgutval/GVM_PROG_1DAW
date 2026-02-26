@@ -1,6 +1,8 @@
 package Electrodomesticos;
 
-public class Lavadora extends Electrodomestico{
+import java.util.Objects;
+
+public class Lavadora extends Electrodomestico implements Comparable{
     protected double carga;
 
 //    Constructores
@@ -39,5 +41,19 @@ public class Lavadora extends Electrodomestico{
     @Override
     public String toString() {
         return "La lavadora tiene un precio base de "+precioBase+"€ y un precio final de "+this.getPrecioFinal()+"€. Es de color "+color+" tiene un consumo "+consumoElectrico+", pesa "+peso+"Kg y tiene una carga de "+carga+"Kg.";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        boolean igual = false;
+        Lavadora lavadora = (Lavadora) o;
+        if (lavadora != null && this.getPrecioFinal() == lavadora.getPrecioFinal()) igual = true;
+        return igual;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Lavadora other = (Lavadora) o;
+        return (int)(other.carga-this.carga);
     }
 }
