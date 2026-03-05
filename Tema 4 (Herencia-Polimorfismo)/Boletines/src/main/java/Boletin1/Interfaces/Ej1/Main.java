@@ -8,11 +8,12 @@ public class Main {
 
         Lista lista = new Lista();
 
-        Integer num=0;
+        System.out.println("Dime un número:");
+        Integer num = sc.nextInt();
         while (num >= 0){
+            lista.encolar(num);
             System.out.println("Dime un número:");
             num = sc.nextInt();
-            if (num>=0) lista.encolar(num);
         }
 
         System.out.println("\nFin del programa--\n-------------DESENCOLANDO----------------");
