@@ -6,22 +6,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="EjerciciosVictorClase" />
-        <module name="EjerciciosDiapositivas" />
-        <module name="PRACT_1-COAC" />
-        <module name="Boletines" />
-        <module name="Boletin" />
-        <module name="PRACT_3-Minecraft" />
-        <module name="Entregable_23-24" />
-        <module name="Agenda" />
-        <module name="PracticaEntregable_2425" />
-        <module name="PRACT_2-Electrodomesticos" />
-        <module name="ExplicacionesVictor" />
+        <module name="Practica_Comparadores" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Agenda" target="20" />
+      <module name="Boletin" target="20" />
       <module name="BoletinEjerciciosHerencia" target="20" />
+      <module name="Boletines" target="20" />
+      <module name="EjerciciosDiapositivas" target="20" />
+      <module name="EjerciciosVictorClase" target="20" />
+      <module name="Entregable_23-24" target="20" />
+      <module name="ExplicacionesVictor" target="20" />
+      <module name="PRACT_1-COAC" target="20" />
+      <module name="PRACT_2-Electrodomesticos" target="20" />
+      <module name="PRACT_3-Minecraft" target="20" />
       <module name="Practica_Entregable_2425" target="20" />
+      <module name="PracticaEntregable_2425" target="20" />
       <module name="Tema-4-Herencia-Polimorfismo" target="20" />
     </bytecodeTargetLevel>
   </component>
