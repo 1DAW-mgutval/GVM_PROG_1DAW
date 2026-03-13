@@ -1,7 +1,6 @@
 package Ejercicios.Ej107;
 
 import java.io.*;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -13,9 +12,10 @@ public class Main {
             if (texto.charAt(i) != '\n') {
                 fw.write(texto.charAt(i));
             } else {
-                fw.write(texto.substring(i,texto.length()-1));
+                fw.write(texto.substring(i));
                 i = texto.length();
             }
         }
+        fw.close();
     }
 }
