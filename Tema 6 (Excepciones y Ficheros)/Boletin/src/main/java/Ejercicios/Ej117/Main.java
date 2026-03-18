@@ -26,17 +26,23 @@ public class Main {
                     System.out.println("El número es negativo, no se guardará.\n");
                 }
             }
+            sc.close();
+            oos.close();
+
+            FileOutputStream fos2 = new FileOutputStream("Tema 6 (Excepciones y Ficheros)/Boletin/src/main/java/Ejercicios/Ej117/numerosCopia.dat");
+            ObjectOutputStream oos2 = new ObjectOutputStream(fos2);
 
             FileInputStream fis = new FileInputStream("Tema 6 (Excepciones y Ficheros)/Boletin/src/main/java/Ejercicios/Ej117/numeros.dat");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            try {
-                while (true) {
-                    System.out.println(ois.readInt()+"\n");
-                }
-            } catch (EOFException E) {
-                System.out.println("FIN DEL ARCHIVO");
+            int num;
+            while (ois.available() > 0) {
+                num = ois.readInt();
+                System.out.println(num);
+                oos2.writeInt(num);
             }
+            oos2.close();
+            ois.close();
         } catch (Exception e) {
             System.out.println("ERROR");
         }
