@@ -16,7 +16,7 @@ public class Main {
                 int opcion = sc.nextInt();
                 switch (opcion) {
                     case 1 -> {
-                        FileOutputStream fos = new FileOutputStream("Tema 6 (Excepciones y Ficheros)/Boletin/src/main/java/Ejercicios/Ej119/temperatura.dat");
+                        FileOutputStream fos = new FileOutputStream("Tema 6 (Excepciones y Ficheros)/Boletin/src/main/java/Ejercicios/Ej119/temperatura.pdf", true);
                         ObjectOutputStream oos = new ObjectOutputStream(fos);
 
                         System.out.println("\nTemperatura en ºC:");
@@ -26,7 +26,7 @@ public class Main {
                         oos.close();
                     }
                     case 2 -> {
-                        FileInputStream fis = new FileInputStream("Tema 6 (Excepciones y Ficheros)/Boletin/src/main/java/Ejercicios/Ej119/temperatura.dat");
+                        FileInputStream fis = new FileInputStream("Tema 6 (Excepciones y Ficheros)/Boletin/src/main/java/Ejercicios/Ej119/temperatura.pdf");
                         ObjectInputStream ois = new ObjectInputStream(fis);
 
                         boolean infinito = true;

@@ -9,7 +9,7 @@ public class Vehiculo implements Comparable {
         int res = 0;
         if (o instanceof Vehiculo otro)  {
             res = this.marca.compareTo(otro.marca);
-            if (res == 0) res = this.modelo.compareTo(otro.marca);
+            if (res == 0) res = this.modelo.compareTo(otro.modelo);
         }
         return res;
     }

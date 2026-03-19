@@ -16,15 +16,21 @@ public class Coche extends Vehiculo {
         return res;
     }
 
-//    @Override
-//    public int compareTo(Object o) {
-//        int res = 0;
-//        if (o instanceof Coche otro) {
-//            if (this.matricula == null && otro.matricula != null) {
-//                res = 1;
-//            } else if (otro.matricula == null && this.matricula != null) {
-//
-//            }
-//        }
-//    }
+    @Override
+    public int compareTo(Object o) {
+        int res = 0;
+        if (o instanceof Coche otro) {
+            if (this.matricula == null && otro.matricula != null) {
+                res = 1;
+            } else if (otro.matricula == null && this.matricula != null) {
+                res = -1;
+            } else if (this.matricula == null) {
+                res = super.compareTo((Vehiculo) otro);
+            } else {
+                res = this.matricula.compareTo(otro.matricula);
+            }
+        }
+        return res;
+    }
+
 }

@@ -8,22 +8,29 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        FileReader fr = new FileReader("numerosPorLinea.txt");
-        BufferedReader br = new BufferedReader(fr);
-        Scanner sc = new Scanner(br);
 
         double suma = 0;
-        while (sc.hasNext()) {
-            try {
-                System.out.println("SUMANDO: "+suma);
-                suma += sc.nextDouble();
-            } catch (InputMismatchException e) {
-                System.out.println("[VALOR ERRONEO]");
-                sc.next();
-            }
-        }
-        sc.close();
+        boolean seguir = true;
+        while (seguir) {
+            FileReader fr = new FileReader("numerosPorLinea.txt");
+            BufferedReader br = new BufferedReader(fr);
+            Scanner sc = new Scanner(br);
 
-        System.out.println("La suma es: "+suma);
+            while (sc.hasNext()) {
+                try {
+                    System.out.println("SUMANDO: " + suma);
+                    suma += sc.nextDouble();
+                } catch (InputMismatchException e) {
+                    System.out.println("[VALOR ERRONEO]");
+                    sc.next();
+                }
+            }
+            sc.close();
+
+            System.out.println("La suma es: " + suma);
+            System.out.println("¿Seguir?");
+            seguir = sc.nextBoolean();
+            System.out.println("-------------------------------------");
+        }
     }
 }
