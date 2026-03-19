@@ -2,6 +2,9 @@ package FicherosBinarios;
 
 import java.io.*;
 
+
+//---------------------------------------------------------------------------------------------------CERRAR FLUJOS-------------------------------------------
+
 public class BinariosMain {
     public static void main(String[] args) throws Exception{
 //       ESCRITURA
@@ -16,6 +19,7 @@ public class BinariosMain {
         boolean infinito = true;
         while (infinito) {
             try {
+                //--------------------------------------------------------------------- implementa SERIALIZABLE ------------------------------------------------------------
                 Registro reg = (Registro) ois.readObject();
                 System.out.println(reg.toString() + "\n");
             } catch (EOFException e) {
