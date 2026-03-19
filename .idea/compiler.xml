@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Practica_Comparadores" />
+        <module name="Ejemplo_TAR_ENTREGABLE_HERENCIA_24_Y_25_FEB" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
