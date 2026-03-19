@@ -9,7 +9,7 @@ public class Coche extends Vehiculo {
 
     public boolean matricular(String matricula) {
         boolean res = false;
-        if (this.matricula != null) {
+        if (this.matricula == null) {
             this.matricula = matricula;
             res = true;
         }

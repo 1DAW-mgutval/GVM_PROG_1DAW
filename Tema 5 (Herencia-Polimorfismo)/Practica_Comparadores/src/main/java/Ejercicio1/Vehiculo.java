@@ -4,6 +4,19 @@ public class Vehiculo implements Comparable {
     protected String marca;
     protected String modelo;
 
+    public Vehiculo () {
+        this.marca = "";
+        this.modelo = "";
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
     @Override
     public int compareTo(Object o) {
         int res = 0;
