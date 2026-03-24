@@ -49,6 +49,7 @@ public class TextoPlanoMain {
             }
         }
         sc.close();
+
         //        ---------------------------------------------------------ESCRITURA---------------------------------------------------------------------
 //        NORMAL
         FileWriter fw = new FileWriter("EJEMPLO");
