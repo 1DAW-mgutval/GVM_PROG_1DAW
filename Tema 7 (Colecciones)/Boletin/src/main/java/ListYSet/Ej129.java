@@ -18,11 +18,13 @@ public class Ej129 {
         } while (num != -1);
         sc.close();
 
-        Iterator iterator = lista.iterator();
-        while (iterator.hasNext()) {
-            if ((int)iterator.next()%2==0) {
-                System.out.println(lista);
+        System.out.println("\níndices par:\n");
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i)%2==0) {
+                System.out.print("|"+i);
+                lista.set(i, lista.get(i)*100);
             }
         }
+        System.out.println("\n"+lista);
     }
 }
