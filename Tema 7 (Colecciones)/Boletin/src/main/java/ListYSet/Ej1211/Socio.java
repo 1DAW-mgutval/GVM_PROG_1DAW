@@ -1,0 +1,28 @@
+package ListYSet.Ej1211;
+
+import java.util.Date;
+import java.util.Objects;
+
+public class Socio implements Comparable<Socio> {
+    protected String dni;
+    protected String nombre;
+    protected Date fechaAlta;
+
+    public Socio(String dni, String nombre, Date fechaAlta) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.fechaAlta = fechaAlta;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Socio socio)) return false;
+        return Objects.equals(dni, socio.dni);
+    }
+
+    @Override
+    public int compareTo(Socio o) {
+        return this.dni.compareTo(o.dni);
+    }
+}

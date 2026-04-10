@@ -14,22 +14,27 @@ public class Ej1210 {
         Set<Integer> listaNoRepetida = new HashSet<>(listaOriginal);
 
 //        Lista solo con los repetidos
-        List<Integer> listaRepetidos = new ArrayList<>();
-        for (int i = 0; i < listaNoRepetida.size(); i++) {
-            Iterator<Integer> iteratorNoRepetida = listaNoRepetida.iterator();
-            int repeticiones = 0;
-            for (int j = 0; j < listaOriginal.size(); j++) {
-                if (iteratorNoRepetida.next().equals(listaOriginal.get(j))) repeticiones++;
-            }
-            if (repeticiones > 1) listaRepetidos.add(listaOriginal.get(i));
-        }
-
+        Set<Integer> listaRepetidos = new HashSet<>();
 //        Lista con los que NO se repiten
+        Set<Integer> listaUnaVez = new HashSet<>();
+
+        for (Integer num : listaOriginal) {
+            int apariciones = 0;
+            for (Integer num2 : listaOriginal) {
+                if (num.equals(num2)) apariciones++;
+            }
+            if (apariciones > 1) {
+                listaRepetidos.add(num);
+            } else {
+                listaUnaVez.add(num);
+            }
+        }
 
 
 //        Muestro las listas
         System.out.println("Lista original: " + listaOriginal);
         System.out.println("Lista sin números repetidos: " + listaNoRepetida);
         System.out.println("Lista de los números que se repiten: " + listaRepetidos);
+        System.out.println("Lista de los números que NO se repiten: " + listaUnaVez);
     }
 }
