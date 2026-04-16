@@ -1,15 +1,18 @@
 package ListYSet.Ej1211;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Scanner;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         try {
             int opcion;
             do {
+
+                TreeSet<Socio> listaSocios = usarSociosExistentes();
+
                 FileOutputStream fos = new FileOutputStream("Tema 7 (Colecciones)/Boletin/src/main/java/ListYSet/Ej1211/socios.dat");
                 ObjectOutputStream oos = new ObjectOutputStream(fos);
 
@@ -18,12 +21,49 @@ public class Main {
                 opcion = sc.nextInt();
 
                 switch (opcion) {
-                    case 1 -> System.out.println();
-                    case 2 ->
-                    case 3 ->
-                    case 4 ->
-                    case 5 ->
-                    case 6 -> System.out.println("Adiós.");
+                    case 1 -> {
+                        try {
+                            if (listaSocios.add(determinarSocio())) {
+                                System.out.println("Socio dado de alta con éxito.\n");
+                            } else {
+                                System.out.println("El socio ya existía\n");
+                            }
+                        } catch (ParseException parseException) {
+                            System.out.println("[FORMATO DE FECHA NO VÁLIDO] Use -> dd/MM/yyyy\n");
+                        }
+                    }
+                    case 2 -> {
+                        try {
+                            if (listaSocios.remove(determinarSocio())) {
+                                System.out.println("Socio dado de baja con éxito.\n");
+                            } else {
+                                System.out.println("El socio no existía\n");
+                            }
+                        } catch (ParseException parseException) {
+                            System.out.println("[FORMATO DE FECHA NO VÁLIDO] Use -> dd/MM/yyyy\n");
+                        }
+                    }
+                    case 3 -> {
+                        System.out.println("DNI del socio a modificar:");
+                        String dni = sc.next();
+
+                        for (Socio socio : listaSocios) {
+                            if (socio.getDni().equals(dni)) {
+                                System.out.print("Nuevo nombre: ");
+                                socio.setNombre(sc.next());
+                            }
+                        }
+                    }
+                    case 4 -> {
+                        System.out.println(listaPorDNI(listaSocios));
+                    }
+                    case 5 -> {
+
+                    }
+                    case 6 -> {
+                        oos.writeObject(listaSocios);
+                        System.out.println("Adiós.");
+                    }
                     default -> System.out.println("[ERROR] Opción no válida");
                 }
             } while (opcion != 6);
@@ -35,14 +75,33 @@ public class Main {
         }
     }
 
-    public static ArrayList<Socio> usarSociosExistentes() throws FileNotFoundException, IOException {
-        FileInputStream fis = new FileInputStream("Tema 7 (Colecciones)/Boletin/src/main/java/ListYSet/Ej1211/socios.dat");
-        ObjectInputStream ois = new ObjectInputStream(fis);
-
+    public static TreeSet<Socio> usarSociosExistentes() throws FileNotFoundException, IOException {
         try {
-            return (ArrayList<Socio>)ois.readObject();
-        } catch (EOFException | ClassNotFoundException e) {
-            return null;
+            FileInputStream fis = new FileInputStream("Tema 7 (Colecciones)/Boletin/src/main/java/ListYSet/Ej1211/socios.dat");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            return (TreeSet<Socio>)ois.readObject();
+        } catch (EOFException | ClassNotFoundException | FileNotFoundException e) {
+            return new TreeSet<>();
         }
     }
+
+    public static Socio determinarSocio() throws ParseException {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("\n DNI del socio:");
+        String dni = sc.next();
+        System.out.println("Nombre del socio:");
+        String nombre = sc.next();
+        System.out.println("Fecha de alta del socio:");
+        Date fechaAlta = new SimpleDateFormat("dd/MM/yyyy").parse(sc.next());
+
+        return new Socio(dni, nombre, fechaAlta);
+    }
+
+    public static List<Socio> listaPorDNI(Collection<Socio> listaSocios) {
+        List<Socio> listaOrdenada = new ArrayList<>(listaSocios);
+        Collections.sort(listaOrdenada);
+        return listaOrdenada;
+    }
+
 }

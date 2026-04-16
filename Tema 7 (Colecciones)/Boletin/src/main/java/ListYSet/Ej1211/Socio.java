@@ -25,4 +25,17 @@ public class Socio implements Comparable<Socio> {
     public int compareTo(Socio o) {
         return this.dni.compareTo(o.dni);
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    @Override
+    public String toString() {
+        return "Socio con DNI "+dni+" de nombre "+nombre+" y alta en "+fechaAlta+"\n";
+    }
 }
