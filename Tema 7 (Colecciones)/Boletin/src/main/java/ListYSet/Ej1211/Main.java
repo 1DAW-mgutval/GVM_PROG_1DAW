@@ -9,13 +9,11 @@ public class Main {
     public static void main(String[] args) {
         try {
             int opcion;
+            TreeSet<Socio> listaSocios = usarSociosExistentes();
+            FileOutputStream fos = new FileOutputStream("Tema 7 (Colecciones)/Boletin/src/main/java/ListYSet/Ej1211/socios.dat");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
             do {
-
-                TreeSet<Socio> listaSocios = usarSociosExistentes();
-
-                FileOutputStream fos = new FileOutputStream("Tema 7 (Colecciones)/Boletin/src/main/java/ListYSet/Ej1211/socios.dat");
-                ObjectOutputStream oos = new ObjectOutputStream(fos);
-
                 Scanner sc = new Scanner(System.in);
                 System.out.println("--------OPCIONES--------\n1. Alta\n2. Baja\n3. Modificación\n4. Listado por DNI\n5. Listado por antigüedad\n6. Salir");
                 opcion = sc.nextInt();
@@ -55,10 +53,18 @@ public class Main {
                         }
                     }
                     case 4 -> {
-                        System.out.println(listaPorDNI(listaSocios));
+                        if (!listaSocios.isEmpty()){
+                            System.out.println(listaPorDNI(listaSocios));
+                        } else {
+                            System.out.println("No hay ningún socio dado de alta.");
+                        }
                     }
                     case 5 -> {
-
+                        if (!listaSocios.isEmpty()){
+                            System.out.println(listaPorAnt(listaSocios));
+                        } else {
+                            System.out.println("No hay ningún socio dado de alta.");
+                        }
                     }
                     case 6 -> {
                         oos.writeObject(listaSocios);
@@ -68,6 +74,8 @@ public class Main {
                 }
             } while (opcion != 6);
 
+            fos.close();
+            oos.close();
         } catch (FileNotFoundException e) {
             System.out.println("[ERROR] No hay ningún socio registrado");
         } catch (IOException e) {
@@ -100,7 +108,13 @@ public class Main {
 
     public static List<Socio> listaPorDNI(Collection<Socio> listaSocios) {
         List<Socio> listaOrdenada = new ArrayList<>(listaSocios);
-        Collections.sort(listaOrdenada);
+        listaOrdenada.sort(Socio::compareTo);
+        return listaOrdenada;
+    }
+
+    public static List<Socio> listaPorAnt(Collection<Socio> listaSocios) {
+        List<Socio> listaOrdenada = new ArrayList<>(listaSocios);
+        listaOrdenada.sort(Comparator.comparing(a -> a.fechaAlta));
         return listaOrdenada;
     }
 

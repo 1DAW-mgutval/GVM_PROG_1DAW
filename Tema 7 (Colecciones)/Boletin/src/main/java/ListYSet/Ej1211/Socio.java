@@ -1,9 +1,10 @@
 package ListYSet.Ej1211;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class Socio implements Comparable<Socio> {
+public class Socio implements Comparable<Socio>, Serializable {
     protected String dni;
     protected String nombre;
     protected Date fechaAlta;
