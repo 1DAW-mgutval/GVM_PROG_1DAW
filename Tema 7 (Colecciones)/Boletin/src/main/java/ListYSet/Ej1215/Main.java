@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
         try {
-            Map<String, Integer> productos = new HashMap<>();
+            Map<Integer, String> productos = new HashMap<>();
             FileOutputStream fos = new FileOutputStream("Tema 7 (Colecciones)/Boletin/src/main/java/ListYSet/Ej1215/productos.dat");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
@@ -24,6 +24,8 @@ public class Main {
 
                 switch (opcion) {
                     case 1 -> {
+                        Integer codigo = identificarProducto(productos);
+
 
                     }
                     case 4 -> seguir = false;
@@ -36,7 +38,13 @@ public class Main {
         }
     }
 
-    public static void identificarProducto() {
-        System.out.println("Código del producto: ");
+    public static Integer identificarProducto(Map<Integer, String> mapa) {
+        Integer codigo;
+        do {
+            System.out.println("Código del producto: ");
+            Scanner sc = new Scanner(System.in);
+            codigo = sc.nextInt();
+        } while (mapa.get(codigo) == null);
+        return codigo;
     }
 }

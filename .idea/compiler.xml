@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="StreamBoletin" />
         <module name="Practica_Comparadores" />
         <module name="DiapositivasMapas" />
         <module name="Ejemplo_TAR_ENTREGABLE_HERENCIA_24_Y_25_FEB" />
