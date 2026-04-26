@@ -1,0 +1,21 @@
+package Ej133;
+
+import java.util.Arrays;
+import java.util.Comparator;
+
+public class Cliente {
+    String nombre;
+
+    public Cliente(String nombre) {
+        this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+}

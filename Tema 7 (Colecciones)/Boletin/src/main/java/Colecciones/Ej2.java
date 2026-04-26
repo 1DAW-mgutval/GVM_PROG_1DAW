@@ -1,3 +1,5 @@
+package Colecciones;
+
 import java.util.*;
 
 public class Ej2 {
