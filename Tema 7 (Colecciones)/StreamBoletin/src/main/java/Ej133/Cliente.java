@@ -5,9 +5,11 @@ import java.util.Comparator;
 
 public class Cliente {
     String nombre;
+    Integer edad;
 
-    public Cliente(String nombre) {
+    public Cliente(String nombre, int edad) {
         this.nombre = nombre;
+        this.edad = edad;
     }
 
     @Override
@@ -17,5 +19,9 @@ public class Cliente {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public Integer getEdad() {
+        return edad;
     }
 }
