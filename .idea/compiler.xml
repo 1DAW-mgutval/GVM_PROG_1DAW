@@ -8,9 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="StreamBoletin" />
         <module name="Practica_Comparadores" />
-        <module name="DiapositivasMapas" />
         <module name="Ejemplo_TAR_ENTREGABLE_HERENCIA_24_Y_25_FEB" />
         <module name="Boletin" />
+        <module name="ExamenStream_2324" />
+        <module name="DiapositivasMapas" />
         <module name="REPASO_EXAMEN" />
       </profile>
     </annotationProcessing>
