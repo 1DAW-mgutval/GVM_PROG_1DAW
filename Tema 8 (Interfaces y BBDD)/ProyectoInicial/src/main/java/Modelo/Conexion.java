@@ -9,7 +9,7 @@ public class Conexion {
     private static String usuario = "usuario";
     private static String password = "usuario";
 
-    public static Connection conectar() {
+    public static Connection getConexion() {
         Connection conexion = null;
         try {
             conexion = DriverManager.getConnection(url, usuario, password);
